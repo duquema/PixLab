@@ -1,10 +1,10 @@
 /**
  * This class contains class (static) methods
- * that will help you test the Picture class 
+ * that will help you test the Picture class
  * methods.  Uncomment the methods and the code
  * in the main to test.
- * 
- * @author Barbara Ericson 
+ *
+ * @author Barbara Ericson
  */
 public class PictureTester
 {
@@ -31,7 +31,7 @@ public class PictureTester
     beach.negate();
     beach.explore();
   }
-  
+
   public static void testGrayscale(){
     Picture beach = new Picture("beach.jpg");
     beach.explore();
@@ -70,7 +70,23 @@ public class PictureTester
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
   }
-  
+
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontalBotToTop();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorDiagonal()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.mirrorDiagonal();
+    beach.explore();
+  }
+
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -79,7 +95,7 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
-  
+
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -87,7 +103,7 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
-  
+
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -95,7 +111,7 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -112,11 +128,12 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
-    testMirrorHorizontal();
+    //testMirrorHorizontal();
+    //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
