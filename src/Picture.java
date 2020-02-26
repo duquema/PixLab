@@ -9,7 +9,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
 /**
  * A class that represents a picture. This class inherits from SimplePicture and
  * allows the student to add functionality to the Picture class.
- * 
+ *
  * @author Barbara Ericson ericson@cc.gatech.edu
  */
 public class Picture extends SimplePicture {
@@ -28,7 +28,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes a file name and creates the picture
-	 * 
+	 *
 	 * @param fileName
 	 *            the name of the file to create the picture from
 	 */
@@ -39,7 +39,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes the width and height
-	 * 
+	 *
 	 * @param height
 	 *            the height of the desired picture
 	 * @param width
@@ -52,7 +52,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes a picture and creates a copy of that picture
-	 * 
+	 *
 	 * @param copyPicture
 	 *            the picture to copy
 	 */
@@ -63,7 +63,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes a buffered image
-	 * 
+	 *
 	 * @param image
 	 *            the buffered image to use
 	 */
@@ -75,7 +75,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Method to return a string with information about this picture.
-	 * 
+	 *
 	 * @return a string with information about the picture such as fileName,
 	 *         height and width.
 	 */
@@ -104,7 +104,7 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
-	
+
 	public void negate(){
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels){
@@ -199,7 +199,36 @@ public class Picture extends SimplePicture {
 		for (int row = 27; row < 97; row++) {
 			// loop from 13 to just before the mirror point
 			for (int col = 13; col < mirrorPoint; col++) {
+				count++;
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+				rightPixel.setColor(leftPixel.getColor());
+			}
+		}
+		System.out.println(count);
+	}
 
+	public void mirrorArms(){
+		Pixel[][] pixels = this.getPixels2D();
+		int mirrorPoint = 194;
+		Pixel topPixel = null;
+		Pixel botPixel = null;
+		for (int row = 159; row < mirrorPoint; row++) {
+			for (int col = 105; col < 293; col++) {
+				topPixel = pixels[row][col];
+				botPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+				botPixel.setColor(topPixel.getColor());
+			}
+		}
+	}
+
+	public void mirrorGull(){
+		Pixel[][] pixels = this.getPixels2D();
+		int mirrorPoint = 345;
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		for (int row = 235; row < 345; row++){
+			for (int col = 235; col < mirrorPoint; col++){
 				leftPixel = pixels[row][col];
 				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 				rightPixel.setColor(leftPixel.getColor());
@@ -210,7 +239,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * copy from the passed fromPic to the specified startRow and startCol in
 	 * the current picture
-	 * 
+	 *
 	 * @param fromPic
 	 *            the picture to copy from
 	 * @param startRow
@@ -252,7 +281,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Method to show large changes in color
-	 * 
+	 *
 	 * @param edgeDist
 	 *            the distance for finding edges
 	 */
