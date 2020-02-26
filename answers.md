@@ -4,7 +4,4 @@
 4. Assuming that a no-argument constructor exists for SimplePicture, would the following code compile?        DigitalPicture p = new SimplePicture(); yes
 5. Assuming that a no-argument constructor exists for Picture, does the following code compile?        DigitalPicture p = new Picture(); yes
 6. Assuming that a no-argument constructor exists for Picture, does the following code compile?        SimplePicture p = new Picture(); yes
-7. Assuming that a no-argument constructor exists for SimplePicture, does the following code compile?        Picture p = new SimplePicture(); no\
-
-1. 90 times
-2. 90 times
+7. Assuming that a no-argument constructor exists for SimplePicture, does the following code compile?        Picture p = new SimplePicture(); no
