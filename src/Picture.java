@@ -159,7 +159,7 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	public void testMirrorVerticalRightToLeft() {
+	public void mirrorVerticalRightToLeft() {
 		Pixel[][] pixels = this.getPixels2D();
 		Pixel leftPixel = null;
 		Pixel rightPixel = null;
